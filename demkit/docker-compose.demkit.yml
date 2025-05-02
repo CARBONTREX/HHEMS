@@ -1,0 +1,25 @@
+networks:
+  hems_network:
+    external: true
+
+services:
+  demkit:
+    container_name: demkit
+    image: demkit:latest
+    networks:
+      - hems_network
+    volumes:
+      # for UNIX
+      - "./workspace:/app/workspace"
+      - "./demkit/components:/app/demkit/components"
+      # for windows use absolute path
+    ports:
+      - "5000:5000"
+    environment:
+      - DEMKIT_FOLDER=example
+      - DEMKIT_MODEL=demohouse
+      - DEMKIT_COMPONENTS=/app/demkit/components/
+      - DEMKIT_INFLUXURL=http://demkit_influxdb
+      - DEMKIT_INFLUXPORT=8086
+      - DEMKIT_INFLUXDB=dem
+      - DEMKIT_COREURL=http://hems-core:8080/

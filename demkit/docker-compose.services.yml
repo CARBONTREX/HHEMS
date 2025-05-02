@@ -1,0 +1,28 @@
+networks:
+  hems_network:
+    external: true
+
+services:
+  demkit_influxdb:
+    container_name: demkit_influx
+    image: influxdb:1.8.10
+    restart: always
+    networks:
+      - hems_network
+    ports:
+      - "8086:8086"
+    volumes:
+      - "./influxdb:/var/lib/influxdb"
+
+  demkit_grafana:
+    container_name: grafana
+    image: grafana/grafana:8.2.6
+    restart: always
+    networks:
+      - hems_network
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./grafana/lib:/var/lib/grafana"
+    depends_on:
+      - demkit_influxdb

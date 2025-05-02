@@ -1,0 +1,14 @@
+networks:
+  hems_network:
+    external: true
+
+services:
+  ha:
+    container_name: home-assistant
+    image: homeassistant/home-assistant:stable
+    networks:
+      - hems_network
+    volumes:
+      - ./config:/config
+    ports:
+      - "8123:8123"

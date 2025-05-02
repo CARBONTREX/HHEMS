@@ -1,0 +1,16 @@
+networks:
+  hems_network:
+    external: true
+
+services:
+  hems-core:
+    container_name: hems-core
+    image: hems-core:latest
+    networks:
+      - hems_network
+    ports:
+      - "8080:8080"
+    environment:
+      - RUST_LOG=info
+    env_file:
+      - .env
