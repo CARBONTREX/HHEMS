@@ -136,7 +136,7 @@ class TimeShiftableEntity(ModelRestEntity):
     def __init__(
         self,
         name: str,
-        profile: list[list[float]] = None,
+        profile: list[RustComplex] = None,
         timeBase: int = 60,
     ):
         super().__init__(name)
@@ -144,7 +144,7 @@ class TimeShiftableEntity(ModelRestEntity):
         if profile is None:
             raise ValueError("profile cannot be None")
 
-        self.profile: list[complex] = [complex(item[0], item[1]) for item in profile]
+        self.profile: list[complex] = [complex(item["re"], item["im"]) for item in profile]
         self.timeBase = timeBase
 
     def load(
