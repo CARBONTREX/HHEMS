@@ -1,6 +1,7 @@
 use crate::api::demkit::ha_entity::{self, EntityRequest};
 use crate::api::ha::entity;
 use actix_web::{get, post, web, HttpResponse, Responder};
+use serde_json::Value;
 use utoipa_actix_web::scope;
 
 pub fn configure(cfg: &mut utoipa_actix_web::service_config::ServiceConfig) {
@@ -31,6 +32,58 @@ async fn get_entity_consumption(path: web::Path<(u32, String)>) -> impl Responde
         Ok(entity_state) => HttpResponse::Ok().json(entity_state),
         Err(e) => HttpResponse::InternalServerError()
             .body(format!("Failed to get device consumption: {}", e)),
+    }
+}
+
+#[utoipa::path(
+    get,
+    tag = "Entity",
+    description = "Get raw entity state from Home Assistant",
+    responses(
+        (status = 200, description = "Get entity state", body = EntityRequest),
+        (status = 500, description = "Failed to get entity state"),
+    ),
+    params(
+        ("house_id" = u32, description = "House ID"),
+        ("entity_name" = String, description = "Name of the entity"),
+    ),
+)]
+#[get("/{entity_name}/state")]
+async fn get_entity_state(path: web::Path<(u32, String)>) -> impl Responder {
+    let entity_name = path.into_inner().1;
+    match entity::get_entity_state(&entity_name).await {
+        Ok(entity_state) => HttpResponse::Ok().json(entity_state),
+        Err(e) => {
+            HttpResponse::InternalServerError().body(format!("Failed to get device state: {}", e))
+        }
+    }
+}
+
+#[utoipa::path(
+    post,
+    tag = "Entity",
+    description = "Set entity state in Home Assistant",
+    request_body = Value,
+    responses(
+        (status = 200, description = "Entity state set successfully"),
+        (status = 500, description = "Failed to set entity state"),
+    ),
+    params(
+        ("house_id" = u32, description = "House ID"),
+        ("entity_name" = String, description = "Name of the entity"),
+    ),
+)]
+#[post("/{entity_name}/state")]
+async fn set_entity_state(
+    path: web::Path<(u32, String)>,
+    body: web::Json<Value>,
+) -> impl Responder {
+    let entity_name = path.into_inner().1;
+    match entity::set_entity_state(&entity_name, body.into_inner()).await {
+        Ok(entity_state) => HttpResponse::Ok().json(entity_state),
+        Err(e) => {
+            HttpResponse::InternalServerError().body(format!("Failed to set device state: {}", e))
+        }
     }
 }
 
