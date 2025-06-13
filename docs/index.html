@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HHEMS - Hybrid Home Energy Management System</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="index.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <nav class="bg-white shadow-sm">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-4">
+            <a href="https://cesi-nl.github.io/"
+              ><img src="public/cesi.jpeg" alt="CESI" class="h-8 w-auto"
+            /></a>
+            <div class="h-8 w-px bg-gray-300"></div>
+            <h1 class="text-2xl font-bold text-blue-600">HHEMS</h1>
+          </div>
+          <div class="hidden md:flex space-x-6">
+            <a href="#contact" class="text-gray-700 hover:text-blue-600"
+              >Contact Us</a
+            >
+            <a href="#team" class="text-gray-700 hover:text-blue-600">Team</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="bg-white py-12 border-b">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            HHEMS: Hybrid Home Energy Management System
+          </h1>
+          <p class="text-xl text-gray-600 mb-4">
+            An open-source platform democratizing smart energy management for
+            Dutch households
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="https://github.com/AlgTUDelft/HHEMS"
+              target="_blank"
+              class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 text-sm"
+            >
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <article class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            The Energy Challenge Facing Dutch Households
+          </h2>
+
+          <p class="text-lg text-gray-700 leading-relaxed">
+            As energy costs continue to rise and the Netherlands pushes toward
+            ambitious climate goals, Dutch households find themselves at the
+            center of a complex energy transition. While the promise of smart
+            energy management exists, current solutions remain prohibitively
+            expensive, overly complex, or locked within proprietary ecosystems
+            that limit user control and innovation.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed">
+            The growing adoption of solar panels, electric vehicles, and home
+            batteries creates new opportunities for energy optimization, but
+            also new challenges. Homeowners need tools to coordinate these
+            devices intelligently, maximizing renewable energy use while
+            minimizing costs. Unfortunately, existing solutions often require
+            significant upfront investments and technical expertise that put
+            them out of reach for many families.
+          </p>
+
+          <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">
+            Introducing HHEMS: A New Approach
+          </h2>
+
+          <p class="text-gray-700 leading-relaxed">
+            The Hybrid Home Energy Management System (HHEMS) represents a
+            fundamentally different approach to home energy management. Built as
+            an open-source platform at TU Delft and part of the
+            <a
+              href="https://cesi-nl.github.io/"
+              class="text-blue-600 hover:text-blue-800 underline"
+              >Convergence</a
+            >
+            initiative, the HHEMS project combines the accessibility of
+            Raspberry Pi hardware with the extensive device support of Home
+            Assistant, creating a solution that is both powerful and
+            approachable.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed">
+            What sets HHEMS apart is its hybrid nature. The platform can easily
+            integrate with real hardware devices through Home Assistant's
+            extensive ecosystem, while also providing sophisticated simulation
+            capabilities for expensive and hard to acquire devices like solar
+            panels, electric vehicles, battery systems, and more. This means
+            researchers can test energy management algorithms without expensive
+            hardware investments, and homeowners can experiment with different
+            scenarios before committing to major purchases.
+          </p>
+
+          <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">
+            How HHEMS Works
+          </h2>
+
+          <p class="text-gray-700 leading-relaxed">
+            At its core, HHEMS leverages
+            <a
+              href="https://www.home-assistant.io/"
+              target="_blank"
+              class="text-blue-600 hover:text-blue-800 underline"
+              >Home Assistant</a
+            >'s extensive ecosystem of device integrations. Home Assistant is an
+            open-source home automation platform that runs on local hardware and
+            supports thousands of different smart devices and services. This
+            means the HHEMS platform can communicate with hundreds of different
+            smart home devices and energy systems right out of the box. The
+            system provides APIs that abstract away the complexity of hardware
+            communication, allowing researchers to focus on energy optimization
+            algorithms rather than low-level device control.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed">
+            HHEMS incorporates a comprehensive simulation tool powered by
+            <a
+              href="https://www.utwente.nl/en/eemcs/energy/demkit/"
+              target="_blank"
+              class="text-blue-600 hover:text-blue-800 underline"
+              >DEMKit</a
+            >, a project developed by TU Twente which allows us to simulate
+            energy devices such as solar panels, batteries, electric vehicles,
+            and other smart home equipment. From an outside perspective of a
+            researcher or household user, there is no difference between real
+            and virtual devices during interaction with the platform. This
+            seamless integration makes HHEMS particularly valuable for research
+            and education, providing a realistic testing environment without the
+            need for expensive physical hardware.
+          </p>
+
+          <div class="my-8">
+            <img
+              src="public/architecture.png"
+              alt="HHEMS Architecture Diagram"
+              class="w-full max-w-3xl mx-auto rounded-lg shadow-sm border"
+            />
+            <p class="text-sm text-gray-500 text-center mt-2">
+              HHEMS System Architecture
+            </p>
+          </div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">
+            Why HHEMS?
+          </h2>
+
+          <p class="text-gray-700 leading-relaxed">
+            HHEMS serves two primary user groups: homeowners with smart home
+            devices like solar panels, batteries, and electric vehicles who want
+            to optimize their energy usage and costs, and researchers who need a
+            platform for developing and testing energy management algorithms
+            without expensive hardware investments.
+          </p>
+
+          <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">
+            Looking Toward the Future
+          </h2>
+
+          <p class="text-gray-700 leading-relaxed">
+            The current implementation of HHEMS represents just the beginning of
+            our vision for democratized energy management. Future developments
+            will focus on creating networks of connected households that can
+            share energy and coordinate consumption patterns at the community
+            level.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed">
+            We envision neighborhoods where homes automatically share excess
+            solar power, where electric vehicles serve as mobile energy storage
+            for the community, and where centralized energy trading systems help
+            optimize costs across multiple households. These connected
+            communities will form the building blocks of self-sustaining virtual
+            power plants that contribute to a more resilient and sustainable
+            energy grid.
+          </p>
+
+          <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">
+            Mobile App Development
+          </h2>
+
+          <p class="text-gray-700 leading-relaxed">
+            While Home Assistant provides powerful automation capabilities, its
+            interface isn't always intuitive for everyday users and doesn't
+            prioritize user experience for energy management tasks. To address
+            this gap, we are developing a dedicated mobile app focused on user
+            experience and ease of use. This app is being developed by 5
+            students as part of the CSE2000 software project course over a span
+            of 10 weeks. The mobile app will provide an intuitive interface for
+            homeowners to monitor their energy usage, control devices, and
+            optimize their energy management strategies. More details will be
+            added soon.
+          </p>
+
+          <div class="my-8">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+              App Screenshots
+            </h3>
+            <div class="overflow-x-auto">
+              <div class="flex space-x-4 pb-4" style="width: max-content">
+                <img
+                  src="public/mobile/image1.png"
+                  alt="Mobile App Screenshot 1"
+                  class="flex-shrink-0 w-48 h-96 rounded-lg object-contain shadow-lg bg-gray-50"
+                />
+                <img
+                  src="public/mobile/image2.png"
+                  alt="Mobile App Screenshot 2"
+                  class="flex-shrink-0 w-48 h-96 rounded-lg object-contain shadow-lg bg-gray-50"
+                />
+                <img
+                  src="public/mobile/image3.png"
+                  alt="Mobile App Screenshot 3"
+                  class="flex-shrink-0 w-48 h-96 rounded-lg object-contain shadow-lg bg-gray-50"
+                />
+                <img
+                  src="public/mobile/image4.png"
+                  alt="Mobile App Screenshot 4"
+                  class="flex-shrink-0 w-48 h-96 rounded-lg object-contain shadow-lg bg-gray-50"
+                />
+                <img
+                  src="public/mobile/image5.png"
+                  alt="Mobile App Screenshot 5"
+                  class="flex-shrink-0 w-48 h-96 rounded-lg object-contain shadow-lg bg-gray-50"
+                />
+                <img
+                  src="public/mobile/image6.png"
+                  alt="Mobile App Screenshot 6"
+                  class="flex-shrink-0 w-48 h-96 rounded-lg object-contain shadow-lg bg-gray-50"
+                />
+                <img
+                  src="public/mobile/image7.png"
+                  alt="Mobile App Screenshot 7"
+                  class="flex-shrink-0 w-48 h-96 rounded-lg object-contain shadow-lg bg-gray-50"
+                />
+                <img
+                  src="public/mobile/image8.png"
+                  alt="Mobile App Screenshot 8"
+                  class="flex-shrink-0 w-48 h-96 rounded-lg object-contain shadow-lg bg-gray-50"
+                />
+                <img
+                  src="public/mobile/image9.png"
+                  alt="Mobile App Screenshot 9"
+                  class="flex-shrink-0 w-48 h-96 rounded-lg object-contain shadow-lg bg-gray-50"
+                />
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">
+            Current Status
+          </h2>
+
+          <p class="text-gray-700 leading-relaxed">
+            HHEMS is currently in active development as a research project at TU
+            Delft. The platform is open-source and available on GitHub, where
+            researchers, developers, and energy enthusiasts can explore the
+            codebase, contribute improvements, and adapt the system for their
+            own projects.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <section id="team" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+            Our Team
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+              <img
+                src="public/mdeweerdt.png"
+                alt="Prof. Dr. Mathijs De Weerdt"
+                class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+              />
+              <h3 class="text-lg font-semibold text-gray-900">
+                Prof. Dr. Mathijs De Weerdt
+              </h3>
+              <p class="text-sm text-gray-600">
+                Professor, Algorithmics Group & CESI
+              </p>
+            </div>
+
+            <div class="text-center">
+              <img
+                src="public/jhon.jpeg"
+                alt="Dr. Jhon Quiñones"
+                class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+              />
+              <h3 class="text-lg font-semibold text-gray-900">
+                Dr. Jhon Quiñones
+              </h3>
+              <p class="text-sm text-gray-600">
+                Post Doctoral Researcher, Algorithmics Group
+              </p>
+            </div>
+
+            <div class="text-center">
+              <img
+                src="public/samuel.jpeg"
+                alt="Samuel Bruin"
+                class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+              />
+              <h3 class="text-lg font-semibold text-gray-900">Samuel Bruin</h3>
+              <p class="text-sm text-gray-600">
+                B.Sc. Computer Science and Engineering
+              </p>
+            </div>
+
+            <div class="text-center">
+              <img
+                src="public/neel.jpeg"
+                alt="Neel Lodha"
+                class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+              />
+              <h3 class="text-lg font-semibold text-gray-900">Neel Lodha</h3>
+              <p class="text-sm text-gray-600">
+                B.Sc. Computer Science and Engineering
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Interested? Contact Us
+          </h2>
+
+          <div class="max-w-2xl mx-auto">
+            <div class="bg-white p-8 rounded-lg text-center">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                Get in Touch
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Explore our open-source platform, contribute to the project, or
+                use HHEMS as a foundation for your own energy management
+                research.
+              </p>
+              <div class="space-y-4">
+                <a
+                  href="https://github.com/AlgTUDelft/HHEMS"
+                  target="_blank"
+                  class="bg-gray-900 text-white px-8 py-3 rounded hover:bg-gray-800 inline-block"
+                >
+                  GitHub Repository
+                </a>
+                <div class="text-gray-600">
+                  <strong>Email:</strong> j.j.quinonescortes[at]tudelft.nl
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <p class="text-gray-400">
+            &copy; 2025 TU Delft Algorithmics Group. Open source project for
+            research and education.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
