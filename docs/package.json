@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "tailwind.config.js",
   "scripts": {
-    "build": "tailwindcss -i ./global.css -o ./index.css --minify"
+    "build": "tailwindcss -i ./global.css -o ./index.css --minify",
+    "watch": "tailwindcss -i ./global.css -o ./index.css --minify --watch"
   },
   "keywords": [],
   "author": "",
